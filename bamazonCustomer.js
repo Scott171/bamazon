@@ -11,7 +11,7 @@ var connection = mysql.createConnection({
 
     user: "root",
 
-    password: "Magessa@87",
+    password: "",
     database: "bamazon_db"
 });
 
@@ -51,7 +51,7 @@ var buyItem = function () {
                 }
             }
         }]).then(function (answer) {
-            var chosenId = answer.itemId - 1
+            var chosenId = answer.itemId-1
             var chosenQuantity = answer.Quantity
             if (chosenQuantity < res[chosenId].stock) {
                 console.log("Your total for " + "(" + answer.Quantity + ")" + " - " + res[chosenId].product_name + " is: $" + res[chosenId].price * chosenQuantity);
